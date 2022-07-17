@@ -4,6 +4,8 @@
 - This includes functionalities of highlighting states onhover and getting the value of clicked state.
 - Includes all States and Union Territories of India.
 
+![This is an image](./svgmap.gif)
+
 ## Installation
 
 Use the package manager for installation.
@@ -43,6 +45,10 @@ const App = () => {
 - **strokeColor** - set border color of each state _(**optional**) (default="#000000")_
 - **strokeWidth** - set border width of each state _(**optional**) (default="0.5")_
 - **hoverColor** - set color of state while hovering on it _(**optional**) (default="#303030")_
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 # Credits
 
