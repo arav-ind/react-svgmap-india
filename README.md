@@ -1,14 +1,12 @@
-# react-svgmap-india
+# React SVG Map India
 
-- This is a JavaScript library which can be used to generate an SVG map of India.
-- This includes functionalities of highlighting states onhover and getting the value of clicked state.
-- Includes all States and Union Territories of India.
+![India Map](./svgmap.gif)
 
-![This is an image](./svgmap.gif)
+This JavaScript module generates an interactive SVG map of India. It allows users to highlight states on hover and retrieve the value of the selected state. The map includes all states and union territories of India.
 
 ## Installation
 
-Use the package manager for installation.
+Install the package via npm:
 
 ```bash
 npm install react-svgmap-india
@@ -16,40 +14,45 @@ npm install react-svgmap-india
 
 ## Usage
 
-```javascript
-import React, { useState } from "react"
-import IndiaMap from "react-svgmap-india"
+```jsx
+import { useState } from 'react';
+import IndiaMap from 'react-svgmap-india';
 
-const App = () => {
-  const [state, setState] = useState()
+export default function Home() {
+  const [selectedState, setSelectedState] = useState('');
+
   return (
-    <>
-      <IndiaMap
-        selectedState={(stateValue) => setState(stateValue)}
-        size={"600px"}
-        mapColor={"#007fe0"}
-        strokeColor={"#000000"}
-        strokeWidth={"1"}
-        hoverColor={"#00c2e0"}
-      />
-    </>
-  )
+    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+      <div className='w-80 h-10 relative'>
+        <IndiaMap
+          onClick={(selectedValue) => setSelectedState(selectedValue)}
+          size='500px'
+          mapColor='white'
+          strokeColor='#4f4f4f'
+          strokeWidth='1'
+          hoverColor='#48d8f5'
+        />
+        <div className='text-[#4f4f4f] text-2xl font-extrabold absolute right-0 top-24'>{selectedState}</div>
+      </div>
+    </main>
+  );
 }
 ```
 
-# Props Available
+## Props Available
 
-- **selectedState={(stateValue) => state(stateValue)}** _(**Required** callback function to get selected state value)._
-- **size** - set width of the map _(**optional**) (default="500px")_
-- **mapColor** - set color of the map _(**optional**) (default="#ffffff")_
-- **strokeColor** - set border color of each state _(**optional**) (default="#000000")_
-- **strokeWidth** - set border width of each state _(**optional**) (default="0.5")_
-- **hoverColor** - set color of state while hovering on it _(**optional**) (default="#303030")_
+- **onClick={(selectedValue) => setSelectedState(selectedValue)}** _(Required) Callback function to get the selected state value._
+- **className** _(Optional)_ - Custom classname for the parent component (default="svgmap").
+- **size** _(Optional)_ - Width of the map (default="inherit").
+- **mapColor** _(Optional)_ - Color of the map (default="#ffffff").
+- **strokeColor** _(Optional)_ - Border color of each state (default="#000000").
+- **strokeWidth** _(Optional)_ - Border width of each state (default="0.5").
+- **hoverColor** _(Optional)_ - Color of the state while hovering on it (default="#303030").
 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-# Credits
+## Credits
 
 Reference of SVG map taken from [MAPSVG](https://mapsvg.com/maps/india).
