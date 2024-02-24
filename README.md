@@ -1,8 +1,8 @@
 # React SVG Map India
 
-![India Map](./svgmap.gif)
+This package generates an interactive SVG map of India. It allows users to highlight states on hover and retrieve the value of the selected state. The map includes all states and union territories of India.
 
-This JavaScript module generates an interactive SVG map of India. It allows users to highlight states on hover and retrieve the value of the selected state. The map includes all states and union territories of India.
+![India Map](./svgmap.gif)
 
 ## Installation
 
