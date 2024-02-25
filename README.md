@@ -78,7 +78,7 @@ export default function MapComponent() {
                 mapColor='white'
                 strokeColor='#4f4f4f'
                 strokeWidth='1'
-                hoverColor='#3d3d3d'
+                hoverColor='#48d8f5'
             />
         </>
     )
