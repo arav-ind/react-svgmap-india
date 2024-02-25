@@ -12,42 +12,90 @@ Install the package via npm:
 npm install react-svgmap-india
 ```
 
+## State List
+
+The following are the states and UTs mapped with its ID.
+
+```js
+const states = {
+  'AN': 'Andaman and Nicobar Islands',
+  'AP': 'Andhra Pradesh',
+  'AR': 'Arunachal Pradesh',
+  'AS': 'Assam',
+  'BR': 'Bihar',
+  'CH': 'Chandigarh',
+  'CT': 'Chhattisgarh',
+  'DD': 'Dadra and Nagar Haveli and Daman and Diu',
+  'DL': 'Delhi',
+  'DN': 'Daman and Diu',
+  'GA': 'Goa',
+  'GJ': 'Gujarat',
+  'HP': 'Himachal Pradesh',
+  'HR': 'Haryana',
+  'JH': 'Jharkhand',
+  'JK': 'Jammu and Kashmir',
+  'KA': 'Karnataka',
+  'KL': 'Kerala',
+  'LA': 'Ladakh',
+  'LD': 'Lakshadweep',
+  'MH': 'Maharashtra',
+  'ML': 'Meghalaya',
+  'MN': 'Manipur',
+  'MP': 'Madhya Pradesh',
+  'MZ': 'Mizoram',
+  'NL': 'Nagaland',
+  'OR': 'Odisha',
+  'PB': 'Punjab',
+  'PY': 'Puducherry',
+  'RJ': 'Rajasthan',
+  'SK': 'Sikkim',
+  'TG': 'Telangana',
+  'TN': 'Tamil Nadu',
+  'TR': 'Tripura',
+  'UP': 'Uttar Pradesh',
+  'UT': 'Uttarakhand',
+  'WB': 'West Bengal'
+}
+```
+
 ## Usage
 
 ```jsx
-import { useState } from 'react';
-import IndiaMap from 'react-svgmap-india';
+'use client'
 
-export default function Home() {
-  const [selectedState, setSelectedState] = useState('');
+import { useState } from 'react'
+import IndiaMap from 'react-svgmap-india'
 
-  return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div className='w-80 h-10 relative'>
-        <IndiaMap
-          onClick={(selectedValue) => setSelectedState(selectedValue)}
-          size='500px'
-          mapColor='white'
-          strokeColor='#4f4f4f'
-          strokeWidth='1'
-          hoverColor='#48d8f5'
-        />
-        <div className='text-[#4f4f4f] text-2xl font-extrabold absolute right-0 top-24'>{selectedState}</div>
-      </div>
-    </main>
-  );
+export default function MapComponent() {
+    const [state, setState] = useState('')
+
+    return (
+        <>
+            <div>{state}</div>
+            <IndiaMap
+                onClick={(selectedValue: string) => setState(selectedValue)}
+                size='500px'
+                mapColor='white'
+                strokeColor='#4f4f4f'
+                strokeWidth='1'
+                hoverColor='#3d3d3d'
+            />
+        </>
+    )
 }
 ```
 
 ## Props Available
 
-- **onClick={(selectedValue) => setSelectedState(selectedValue)}** _(Required) Callback function to get the selected state value._
-- **className** _(Optional)_ - Custom classname for the parent component (default="svgmap").
-- **size** _(Optional)_ - Width of the map (default="inherit").
-- **mapColor** _(Optional)_ - Color of the map (default="#ffffff").
-- **strokeColor** _(Optional)_ - Border color of each state (default="#000000").
-- **strokeWidth** _(Optional)_ - Border width of each state (default="0.5").
-- **hoverColor** _(Optional)_ - Color of the state while hovering on it (default="#303030").
+| Props       | Description                                             | Requirement | Default Value |
+|-------------|---------------------------------------------------------|-------------|---------------|
+| onClick     | Callback function to get the selected state value.      | Required    | NA            |
+| className   | Custom classname for the map component.                 | Optional    | "svgmap"      |
+| size        | Width of the map.                                       | Optional    | "inherit"     |
+| mapColor    | Color of the map.                                       | Optional    | "#ffffff"     |
+| strokeColor | Border color of each state.                             | Optional    | "#000000"     |
+| strokeWidth | Border width of each state.                             | Optional    | "0.5"         |
+| hoverColor  | Color of the state while hovering on it.                | Optional    | "#303030"     |
 
 ## Contributing
 
