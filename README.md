@@ -25,7 +25,7 @@ const states = {
   'BR': 'Bihar',
   'CH': 'Chandigarh',
   'CT': 'Chhattisgarh',
-  'DD': 'Dadra and Nagar Haveli and Daman and Diu',
+  'DD': 'Dadra and Nagar Haveli',
   'DL': 'Delhi',
   'DN': 'Daman and Diu',
   'GA': 'Goa',
