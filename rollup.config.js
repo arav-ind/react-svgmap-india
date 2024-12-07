@@ -9,7 +9,7 @@ export default [
     input: './src/index.ts',
     output: [
       { file: 'dist/index.js', format: 'cjs', exports: 'default' },
-      { file: 'dist/index.es.js', format: 'es', exports: 'default' },
+      { file: 'dist/index.mjs', format: 'es', exports: 'default' },
     ],
     plugins: [
       babel({
